@@ -1,6 +1,7 @@
 import subprocess
 import threading
 import socket
+import sys
 comando="Hello World"
 
 host=''
