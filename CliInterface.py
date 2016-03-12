@@ -39,3 +39,11 @@ while 1:
             print("Info>> Program is not running")
         print "-----------------------------------------------"
         print ""
+        
+    if comando=="pull":
+        print ""
+        print "-----------------Pulling Repository------------------"
+        subprocess.call('cd Esercitazioni', shell=True)
+        subprocess.call('git pull ', shell=True)
+        print "-----------------------------------------------"
+        print ""
