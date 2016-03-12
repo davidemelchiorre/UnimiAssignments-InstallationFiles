@@ -43,8 +43,7 @@ while 1:
     if comando=="pull":
         print ""
         print "-----------------Pulling Repository------------------"
-        subprocess.call('cd Esercitazioni', shell=True)
-        subprocess.call('ls -l', shell=True)
-        subprocess.call('git pull https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git', shell=True)
+        print "Pulling into Esercitazioni...
+        subprocess.call('./Esercitazioni/pull_Esercitazioni.py', shell=True)
         print "-----------------------------------------------"
         print ""
