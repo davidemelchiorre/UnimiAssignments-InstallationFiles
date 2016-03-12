@@ -18,6 +18,7 @@ def server_function():
         buf = client.recv(buflen)
         if not buf:break
         comando=buf.decode('utf-8')
+        print ">",comando
         client.send(bytes(0))
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
