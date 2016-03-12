@@ -12,6 +12,7 @@ server.bind((host, port))
 server.listen(5)
 
 def server_function():
+    global comando
     while 1:
         client, buf = server.accept()
         #-------------------------
@@ -20,9 +21,19 @@ def server_function():
         comando=buf.decode('utf-8')
         print ">",comando
         client.send(bytes(0))
+        if comando=="quit"
+            client.close()
+            
+def input_function():
+    global comando
+    while 1:
+        comando = raw_input(">")
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
+input_thread=threading.Thread(name='input_thread', target=input_function)
+
 server_thread.start()
+input_thread.start()
 
 print ""
 print "Starting Cli Interface..."
@@ -31,8 +42,6 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
-    comando = raw_input(">")
-    
     if comando=="start":
         print ""
         print "-----------------Start routine-----------------"
@@ -77,3 +86,5 @@ while 1:
     
     if comando=="quit":
         server.close()
+        
+    comando="Hello World"
