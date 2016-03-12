@@ -6,8 +6,9 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
+    subprocess.call(["ls","-l"])
     comando = raw_input(">")
-
+    
     if comando=="start":
         print ""
         print "-----------------Start routine-----------------"
