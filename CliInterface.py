@@ -87,5 +87,3 @@ while 1:
     
     if comando=="quit":
         server.close()
-        
-    print "-",comando
