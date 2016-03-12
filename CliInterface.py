@@ -58,7 +58,7 @@ def quit():
     server.close()
     subprocess.call('lsof -n -i', shell=True)
     subprocess.call('exit', shell=True)
-    os.kill(os.getPid(),15)
+    os.kill(os.getpid(),15)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
