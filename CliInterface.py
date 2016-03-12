@@ -83,14 +83,21 @@ def server_function():
             client.close()
             client.send(comando.encode('utf-8'))
             quit()
-
+            
+def client_function():
+    HOST = "0.0.0.0"
+    PORT = 30005
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, PORT))
+    client.close()
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
-server_thread.start()
+client_thread=threading.Thread(name='client_thread', target=client_function)
 
 print ""
 print "Starting Cli Interface..."
 print "Type 'quit' to terminate"
+server_thread.start()
 #------------------------------------------------------------------------------------
 print ""
 print "-------------------------Cli Interface-------------------------"
@@ -105,5 +112,5 @@ while 1:
     if comando=="get":
         get()
     if comando=="quit":
-        client.close()
+        client_thread.start()
         quit()
