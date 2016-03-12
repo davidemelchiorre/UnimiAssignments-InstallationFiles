@@ -44,6 +44,6 @@ while 1:
         print ""
         print "-----------------Pulling Repository------------------"
         print "Pulling into Esercitazioni..."
-        subprocess.call('./Esercitazioni/pull_Esercitazioni.py', shell=True)
+        subprocess.call('python Esercitazioni/pull_Esercitazioni.py', shell=True)
         print "-----------------------------------------------"
         print ""
