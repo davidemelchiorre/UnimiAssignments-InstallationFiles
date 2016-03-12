@@ -15,7 +15,7 @@ while 1:
         try:
             if proc is None:
                 print("Info>> Starting program...")
-                subprocess.call('cd ../notebook, shell=True)
+                subprocess.call('cd ../notebook', shell=True)
                 proc=subprocess.Popen(["jupyter","notebook"])
             else:
                 print("Info>> Program is already running")
