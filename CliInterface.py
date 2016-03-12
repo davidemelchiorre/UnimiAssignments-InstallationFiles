@@ -2,7 +2,7 @@ import subprocess
 import threading
 import socket
 comando="Hello World"
-started=stop
+started=0
 
 host=''
 port = 9696
@@ -31,7 +31,7 @@ def server_function():
             client.send(comando.encode('utf-8'))
             
         if comando=="started":
-            client.send(started.encode('utf-8'))
+            client.send(bytes(started))
 
 
 
@@ -48,7 +48,7 @@ while 1:
         comando = raw_input(">")
     
     if comando=="start":
-        started=start
+        started=1
         print ""
         print "-----------------Start routine-----------------"
         try:
@@ -64,7 +64,7 @@ while 1:
         print ""
   
     if comando=="stop":
-        started=stop
+        started=0
         print ""
         print "-----------------Stop routine------------------"
         try:
