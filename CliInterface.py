@@ -84,5 +84,7 @@ while 1:
     
     if comando=="quit":
         server.close()
+        subprocess.call('lsof -n -i', shell=True)
+        subprocess.call('exit', shell=True)
 
     comando="Hello World"
