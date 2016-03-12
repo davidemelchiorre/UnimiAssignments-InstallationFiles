@@ -7,6 +7,10 @@ host=''
 port = 9696
 buflen=1024
 
+print ""
+print "Starting Cli Interface..."
+print "Press CTRL+C to terminate"
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
 server.listen(5)
@@ -34,10 +38,7 @@ input_thread=threading.Thread(name='input_thread', target=input_function)
 
 server_thread.start()
 input_thread.start()
-
-print ""
-print "Starting Cli Interface..."
-print "Press CTRL+C to terminate"
+#------------------------------------------------------------------------------------
 print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
@@ -87,4 +88,4 @@ while 1:
     if comando=="quit":
         server.close()
         
-    comando="Hello World"
+    print "-",comando
