@@ -2,6 +2,7 @@ import subprocess
 import threading
 import socket
 import os
+import psutil
 comando="Hello World"
 
 host=''
