@@ -44,7 +44,7 @@ while 1:
         print ""
         print "--------------Getting Notebooks----------------"
         print "Cloning into Esercitazioni..."
-        subprocess.call('rm -r mydir', shell=True)
+        subprocess.call('rm -r Esercitazioni', shell=True)
         subprocess.call('git clone https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
         subprocess.call('ls -l', shell=True)
         print "cloned into Esercitazioni"
