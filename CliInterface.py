@@ -32,7 +32,7 @@ def server_function():
         if comando=="started":
             client.send(bytes(started))
             print started
-        else
+        else:
             print ">",comando
 
 
