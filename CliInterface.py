@@ -43,7 +43,7 @@ while 1:
     if comando=="pull":
         print ""
         print "-----------------Pulling Repository------------------"
-        print "Pulling into Esercitazioni...
+        print "Pulling into Esercitazioni..."
         subprocess.call('./Esercitazioni/pull_Esercitazioni.py', shell=True)
         print "-----------------------------------------------"
         print ""
