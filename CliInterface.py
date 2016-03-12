@@ -30,7 +30,7 @@ def server_function():
             client.send(comando.encode('utf-8'))
             
         if comando=="started":
-            client.send(bytes(started))
+            client.send(started.encode('utf-8')
             print started
         else:
             print ">",comando
