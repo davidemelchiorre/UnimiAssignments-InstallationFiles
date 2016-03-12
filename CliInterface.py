@@ -6,7 +6,7 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
-    os.system("ls -l")
+    print "dddddddddddddddddddddddddddddd"
     comando = raw_input(">")
     
     if comando=="start":
