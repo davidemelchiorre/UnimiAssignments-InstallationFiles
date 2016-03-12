@@ -80,8 +80,6 @@ def server_function():
         if comando=="get":
             get()
         if comando=="quit":
-            client.close()
-            client.send(comando.encode('utf-8'))
             quit()
             
 
