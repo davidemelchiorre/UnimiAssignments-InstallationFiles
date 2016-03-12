@@ -3,10 +3,9 @@ print ""
 print "Starting Cli Interface..."
 print "Press CTRL+C to terminate"
 print ""
-print "-------------------------Cli Interface-------------------------"
+print "-------------------------aaaaaaaaaaaaaa-------------------------"
 print ""
 while 1:
-    print "dddddddddddddddddddddddddddddd"
     comando = raw_input(">")
     
     if comando=="start":
