@@ -1,5 +1,4 @@
 import subprocess
-from sh import cd
 
 print ""
 print "Starting Cli Interface..."
@@ -16,13 +15,13 @@ while 1:
         try:
             if proc is None:
                 print("Info>> Starting program...")
-                cd("../notebook")
+                call("cd","../notebook")
                 proc=subprocess.Popen(["jupyter","notebook"])
             else:
                 print("Info>> Program is already running")
         except NameError:
             print("Info>> Starting program...")
-            cd("../notebook")
+            call("cd","../notebook")
             proc=subprocess.Popen(["jupyter","notebook"])
         print "-----------------------------------------------"
         print ""
