@@ -6,7 +6,7 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
-    subprocess.Popen(["ls","-l"])
+    os.system("ls -l")
     comando = raw_input(">")
     
     if comando=="start":
