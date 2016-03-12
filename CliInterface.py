@@ -3,7 +3,7 @@ import subprocess
 print ""
 print "Starting Cli Interface..."
 print "Press CTRL+C to terminate"
-print "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest"
+print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
