@@ -21,7 +21,7 @@ def server_function():
         comando=buf.decode('utf-8')
         print ">",comando
         client.send(bytes(0))
-        if comando=="quit"
+        if comando=="quit":
             client.close()
             
 def input_function():
