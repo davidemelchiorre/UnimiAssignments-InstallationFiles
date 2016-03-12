@@ -67,7 +67,7 @@ def server_function():
         if not buf:break
         comando=buf.decode('utf-8')
         
-        if comando!="Hello World"
+        if comando!="Hello World":
             print ">",comando
         if comando=="start":
             start()
