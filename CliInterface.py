@@ -1,4 +1,29 @@
 import subprocess
+import threading
+import socket
+comando="Hello World"
+
+host=''
+port = 9696
+buflen=1024
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((host, port))
+server.listen(5)
+
+def server_function():
+    while 1:
+        client, buf = server.accept()
+        #-------------------------
+        buf = client.recv(buflen)
+        if not buf:break
+        comando=buf.decode('utf-8')
+        client.send(bytes(0))
+    client.close()
+    server.close()
+
+server_thread=threading.Thread(name='server_thread', target=server_function)
+server_thread.start()
 
 print ""
 print "Starting Cli Interface..."
