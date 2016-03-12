@@ -14,11 +14,13 @@ while 1:
         try:
             if proc is None:
                 print("Info>> Starting program...")
+                call(["cd","UnimiAssignment/notebooks"])
                 proc=subprocess.Popen(["jupyter","notebook"])
             else:
                 print("Info>> Program is already running")
         except NameError:
             print("Info>> Starting program...")
+            call(["cd","UnimiAssignment/notebooks"])
             proc=subprocess.Popen(["jupyter","notebook"])
         print "-----------------------------------------------"
         print ""
