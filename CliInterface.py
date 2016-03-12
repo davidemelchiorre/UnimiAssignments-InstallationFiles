@@ -37,7 +37,7 @@ print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
     
-    if comando=="Hello World"
+    if comando=="Hello World":
         comando = raw_input(">")
     
     if comando=="start":
