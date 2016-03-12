@@ -44,6 +44,6 @@ while 1:
         print ""
         print "-----------------Pulling Repository------------------"
         print "Pulling into Esercitazioni..."
-        subprocess.call('git pull https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
+        subprocess.call('git clone https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
         print "-----------------------------------------------"
         print ""
