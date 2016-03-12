@@ -27,22 +27,19 @@ def server_function():
         client.send(bytes(0))
         if comando=="quit":
             client.close()
-            
-def input_function():
-    global comando
-    while 1:
-        comando = raw_input(">")
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
-input_thread=threading.Thread(name='input_thread', target=input_function)
-
 server_thread.start()
-input_thread.start()
+
 #------------------------------------------------------------------------------------
 print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
+    
+    if comando=="Hello World"
+        comando = raw_input(">")
+    
     if comando=="start":
         print ""
         print "-----------------Start routine-----------------"
@@ -87,3 +84,5 @@ while 1:
     
     if comando=="quit":
         server.close()
+
+    comando="Hello World"
