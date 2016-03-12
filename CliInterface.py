@@ -44,7 +44,7 @@ while 1:
         print ""
         print "-----------------Pulling Repository------------------"
         print "Pulling into Esercitazioni..."
-        subprocess.call('git pull https://github.com/davidemelchiorre/UnimiAssignments-Esercitazioni.git', shell=True)
+        subprocess.call('git pull https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git', shell=True)
         subprocess.call('mv temp/.git Esercitazioni/.git', shell=True)
         subprocess.call('rm -rf temp', shell=True)
         print "-----------------------------------------------"
