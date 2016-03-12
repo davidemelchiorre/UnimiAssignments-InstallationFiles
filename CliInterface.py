@@ -15,11 +15,13 @@ def start():
         if proc is None:
             print("Info>> Starting program...")
             proc=subprocess.Popen(["jupyter","notebook"])
+            print(proc)
         else:
             print("Info>> Program is already running")
     except NameError:
         print("Info>> Starting program...")
         proc=subprocess.Popen(["jupyter","notebook"])
+        print(proc)
     print "-----------------------------------------------"
     print ""
     
@@ -103,4 +105,5 @@ while 1:
     if comando=="get":
         get()
     if comando=="quit":
+        client.close()
         quit()
