@@ -19,8 +19,6 @@ def server_function():
         if not buf:break
         comando=buf.decode('utf-8')
         client.send(bytes(0))
-    client.close()
-    server.close()
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
 server_thread.start()
@@ -75,3 +73,6 @@ while 1:
         print "cloned into Esercitazioni"
         print "-----------------------------------------------"
         print ""
+    
+    if comando=="quit"
+        server.close()
