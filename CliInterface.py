@@ -1,7 +1,7 @@
 import subprocess
 import threading
 import socket
-import sys
+import os
 comando="Hello World"
 
 host=''
@@ -58,7 +58,8 @@ def quit():
     server.close()
     subprocess.call('lsof -n -i', shell=True)
     subprocess.call('exit', shell=True)
-    sys.exit(0)
+    p = psutil.Process(os.getPid())
+    p.terminate()
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
