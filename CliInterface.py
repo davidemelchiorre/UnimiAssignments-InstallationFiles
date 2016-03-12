@@ -7,7 +7,8 @@ host=''
 port = 9696
 buflen=1024
 
-def start(proc):
+def start():
+    global proc
     print ""
     print "-----------------Start routine-----------------"
     try:
@@ -22,7 +23,8 @@ def start(proc):
     print "-----------------------------------------------"
     print ""
     
-def stop(proc):
+def stop():
+    global proc
     print ""
     print "-----------------Stop routine------------------"
     try:
@@ -70,15 +72,9 @@ def server_function():
         if comando!="Hello World":
             print ">",comando
         if comando=="start":
-            try:
-                start(proc)
-            except NameError:
-                print ""
+            start()
         if comando=="stop":
-            try:
-                stop(proc)
-            except NameError:
-                print ""
+            stop()
         if comando=="get":
             get()
         if comando=="quit":
@@ -101,15 +97,9 @@ while 1:
     
     comando = raw_input(">")
     if comando=="start":
-        try:
-            start(proc)
-        except NameError:
-            print ""
+        start()
     if comando=="stop":
-        try:
-            stop(proc)
-        except NameError:
-            print ""
+        stop()
     if comando=="get":
         get()
     if comando=="quit":
