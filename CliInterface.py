@@ -75,5 +75,5 @@ while 1:
         print "-----------------------------------------------"
         print ""
     
-    if comando=="quit"
+    if comando=="quit":
         server.close()
