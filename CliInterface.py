@@ -30,7 +30,7 @@ def server_function():
             client.send(comando.encode('utf-8'))
             
         if comando=="started":
-            if started=="start"
+            if started=="start":
                 client.send(started.encode('utf-8'))
         else:
             print ">",comando
