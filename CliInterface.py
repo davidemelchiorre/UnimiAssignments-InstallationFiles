@@ -68,21 +68,19 @@ def launch(cmd):
 
 class handler(websocket.WebSocketHandler):
     def open(obj):
-        print ('Connection opened')
+        print ('Found web graphic interface')
   
     def on_close(obj):
-        print ('Connection close')
+        print ('Web graphic interface closed')
   
     def check_origin(obj, origin):
         return True
 
     def on_message(obj, received):
-        global comando
         print ">",received
-        launch(comando)
+        launch(received)
 
 def server_function():
-    print "Server Function Activated"
     socket_name="/websocket-server"
     server = httpserver.HTTPServer(web.Application([(socket_name, handler)]))
     server.listen(9595)
