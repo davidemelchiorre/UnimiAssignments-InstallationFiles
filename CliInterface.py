@@ -6,6 +6,7 @@ import subprocess
 import threading
 import os
 comando="Hello World"
+jupyter=0
 
 def start():
     global proc
@@ -59,8 +60,10 @@ def quit():
 def launch(cmd):
     if comando=="start":
         start()
+        jupyter=1
     if comando=="stop":
         stop()
+        jupyter=0
     if comando=="get":
         get()
     if comando=="quit":
@@ -69,6 +72,7 @@ def launch(cmd):
 class handler(websocket.WebSocketHandler):
     def open(obj):
         print ('Found web graphic interface')
+        server.send(jupyter)
   
     def on_close(obj):
         print ('Web graphic interface closed')
