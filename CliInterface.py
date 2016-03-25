@@ -77,6 +77,7 @@ class handler(websocket.WebSocketHandler):
         return True
 
     def on_message(obj, received):
+        global comando
         print ">",received
         comando=received
         print "remote command launched"
@@ -89,10 +90,11 @@ def server_function():
 
 def keyboard_function():
     global comando
-    try:
-        comando = raw_input(">")
-    except Error:
-        comando="Hello World"
+    while 1:
+        try:
+            comando = raw_input(">")
+        except Error:
+            comando="Hello World"
             
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
