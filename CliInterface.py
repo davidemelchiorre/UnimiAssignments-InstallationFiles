@@ -71,6 +71,7 @@ class handler(websocket.WebSocketHandler):
         print ('cmd: %s' % received)
 
 def server_function():
+    print "Server Function Activated"
     socket_name="/websocket-server"
     server = httpserver.HTTPServer(web.Application([(socket_name, handler)]))
     server.listen(9595)
