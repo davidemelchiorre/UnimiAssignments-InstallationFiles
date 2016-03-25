@@ -84,7 +84,6 @@ class handler(websocket.WebSocketHandler):
         print ">",received
         comando=received
         print "remote command launched"
-        websocket.WebSocketHandler.sendMessage(jupyter)
 
 def server_function():
     socket_name="/websocket-server"
