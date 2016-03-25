@@ -79,6 +79,7 @@ class handler(websocket.WebSocketHandler):
     def on_message(obj, received):
         print ">",received
         launch(received)
+        print "remote command launched"
 
 def server_function():
     socket_name="/websocket-server"
