@@ -78,7 +78,7 @@ class handler(websocket.WebSocketHandler):
 
     def on_message(obj, received):
         print ">",received
-        launch(received)
+        comando=received
         print "remote command launched"
 
 def server_function():
@@ -86,11 +86,19 @@ def server_function():
     server = httpserver.HTTPServer(web.Application([(socket_name, handler)]))
     server.listen(9595)
     ioloop.IOLoop.instance().start()
+
+def keyboard_function():
+    global comando
+    try:
+        comando = raw_input(">")
+    except Error:
+        comando="Hello World"
             
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
 server_thread.start()
-
+keyboard_thread=threading.Thread(name='keyboard_thread', target=keyboard_function)
+keyboard_thread.start()
 
 
 
@@ -103,9 +111,6 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
-    try:
-        comando = raw_input(">")
-    except Error:
-        comando="Hello World"
-        
-    launch(comando)
+    if comando!="Hello World":
+        launch(comando)
+
