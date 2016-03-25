@@ -67,7 +67,9 @@ class handler(websocket.WebSocketHandler):
         return True
 
     def on_message(obj, received):
-        print ('cmd: %s' % received)
+        global comando
+        print ">",received
+        comando=received
 
 def server_function():
     print "Server Function Activated"
