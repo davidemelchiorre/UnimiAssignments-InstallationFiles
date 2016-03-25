@@ -93,11 +93,8 @@ print ""
 print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
-    try:
-        comando = raw_input('>')
-    except (EOFError):
-        print "EOF Exception"
-        break
+    comando = raw_input('>')
+
     if comando=="start":
         start()
     if comando=="stop":
