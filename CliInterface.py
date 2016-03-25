@@ -4,13 +4,8 @@ from tornado import web
 from tornado import websocket
 import subprocess
 import threading
-import socket
 import os
 comando="Hello World"
-
-host=''
-port = 9696
-buflen=1024
 
 def start():
     global proc
@@ -62,29 +57,24 @@ def quit():
     server.close()
     os.kill(os.getpid(),15)
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((host, port))
-server.listen(5)
+class handler(websocket.WebSocketHandler):
+    def open(obj):
+        print ('Connection opened')
+  
+    def on_close(obj):
+        print ('Connection close')
+  
+    def check_origin(obj, origin):
+        return True
+
+    def on_message(obj, received):
+        print ('cmd: %s' % received)
 
 def server_function():
-    global comando
-    while 1:
-        client, buf = server.accept()
-        #-------------------------
-        buf = client.recv(buflen)
-        if not buf:break
-        comando=buf.decode('utf-8')
-        
-        if comando!="Hello World":
-            print ">",comando
-        if comando=="start":
-            start()
-        if comando=="stop":
-            stop()
-        if comando=="get":
-            get()
-        if comando=="quit":
-            quit()
+    socket_name="/websocket-server"
+    server = httpserver.HTTPServer(web.Application([(socket_name, handler)]))
+    server.listen(9595)
+    ioloop.IOLoop.instance().start()
             
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
