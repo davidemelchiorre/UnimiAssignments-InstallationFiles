@@ -95,7 +95,7 @@ print "-------------------------Cli Interface-------------------------"
 print ""
 while 1:
     
-    comando = raw_input(">")
+    comando = input(">")
     if comando=="start":
         start()
     if comando=="stop":
