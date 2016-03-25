@@ -56,6 +56,16 @@ def get():
 def quit():
     os.kill(os.getpid(),15)
 
+def launch(cmd):
+    if comando=="start":
+        start()
+    if comando=="stop":
+        stop()
+    if comando=="get":
+        get()
+    if comando=="quit":
+        quit()
+
 class handler(websocket.WebSocketHandler):
     def open(obj):
         print ('Connection opened')
@@ -69,7 +79,7 @@ class handler(websocket.WebSocketHandler):
     def on_message(obj, received):
         global comando
         print ">",received
-        comando=received
+        launch(comando)
 
 def server_function():
     print "Server Function Activated"
@@ -81,6 +91,10 @@ def server_function():
 
 server_thread=threading.Thread(name='server_thread', target=server_function)
 server_thread.start()
+
+
+
+
 
 print ""
 print "Starting Cli Interface..."
@@ -95,11 +109,4 @@ while 1:
     except Error:
         comando="Hello World"
         
-    if comando=="start":
-        start()
-    if comando=="stop":
-        stop()
-    if comando=="get":
-        get()
-    if comando=="quit":
-        quit()
+    launch(comando)
