@@ -115,4 +115,5 @@ print ""
 while 1:
     if comando!="Hello World":
         launch(comando)
+        comando="Hello World"
 
