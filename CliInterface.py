@@ -73,7 +73,7 @@ class handler(websocket.WebSocketHandler):
     def open(obj):
         print ('Found web graphic interface')
         global server
-        server.send(jupyter)
+        obj.sendMessage(jupyter)
   
     def on_close(obj):
         print ('Web graphic interface closed')
