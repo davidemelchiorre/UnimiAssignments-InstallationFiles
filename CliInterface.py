@@ -72,6 +72,7 @@ def launch(cmd):
 class handler(websocket.WebSocketHandler):
     def open(obj):
         print ('Found web graphic interface')
+        global server
         server.send(jupyter)
   
     def on_close(obj):
@@ -87,6 +88,7 @@ class handler(websocket.WebSocketHandler):
         print "remote command launched"
 
 def server_function():
+    global server
     socket_name="/websocket-server"
     server = httpserver.HTTPServer(web.Application([(socket_name, handler)]))
     server.listen(9595)
