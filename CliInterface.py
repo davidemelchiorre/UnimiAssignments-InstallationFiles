@@ -70,7 +70,7 @@ def launch(cmd):
         quit()
 
 class handler(websocket.WebSocketHandler):
-    def open(obj):
+    def on_open(obj):
         print ('Found web graphic interface')
         global server
         obj.sendMessage(jupyter)
