@@ -72,9 +72,6 @@ def launch(cmd):
 class handler(websocket.WebSocketHandler):
     def open(obj):
         print ('Found web graphic interface')
-    
-    def on_open(obj):
-        obj.sendMessage(jupyter)
   
     def on_close(obj):
         print ('Web graphic interface closed')
@@ -87,6 +84,7 @@ class handler(websocket.WebSocketHandler):
         print ">",received
         comando=received
         print "remote command launched"
+        obj.sendMessage(jupyter)
 
 def server_function():
     socket_name="/websocket-server"
