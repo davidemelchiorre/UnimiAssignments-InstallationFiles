@@ -54,7 +54,6 @@ def get():
     print ""
 
 def quit():
-    server.close()
     os.kill(os.getpid(),15)
 
 class handler(websocket.WebSocketHandler):
