@@ -47,8 +47,9 @@ def get():
     print ""
     print "--------------Getting Notebooks----------------"
     print "Cloning into Esercitazioni..."
-    subprocess.call('rm -r Esercitazioni', shell=True)
-    subprocess.call('git clone https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
+    print comando
+    #subprocess.call('rm -r Esercitazioni', shell=True)
+    #subprocess.call('git clone https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
     subprocess.call('ls -l', shell=True)
     print "cloned into Esercitazioni"
     print "-----------------------------------------------"
@@ -64,7 +65,7 @@ def launch(cmd):
     if comando=="stop":
         stop()
         jupyter=0
-    if comando=="get":
+    if comando.index("get")>=0:
         get()
     if comando=="quit":
         quit()
