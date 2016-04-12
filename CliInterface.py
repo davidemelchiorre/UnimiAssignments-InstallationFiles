@@ -47,7 +47,8 @@ def get():
     print ""
     print "--------------Getting Notebooks----------------"
     print "Cloning into Esercitazioni..."
-    print comando
+    for corso in comando.split(" ")[1:]:
+        print corso
     #subprocess.call('rm -r Esercitazioni', shell=True)
     #subprocess.call('git clone https://github.com/davidemelchiorre/UnimiAssignment-Esercitazioni.git Esercitazioni', shell=True)
     subprocess.call('ls -l', shell=True)
