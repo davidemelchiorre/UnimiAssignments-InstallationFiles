@@ -65,7 +65,7 @@ def launch(cmd):
     if comando=="stop":
         stop()
         jupyter=0
-    if comando.index("get")>=0:
+    if comando.find("get")>=0:
         get()
     if comando=="quit":
         quit()
